@@ -69,6 +69,7 @@ Take a baseline installation of a Linux distribution on a virtual machine and pr
 
   from catalog import app as application
   application.secret_key = 'super_secret_key'
+  ```
 
 11. Install Flask and other dependencies
   - Install pip with `sudo apt-get install python-pip`
@@ -106,8 +107,10 @@ Take a baseline installation of a Linux distribution on a virtual machine and pr
       CustomLog ${APACHE_LOG_DIR}/access.log combined
 
   </VirtualHost>
+  ```
 
 14. Install and configure PostgreSQL
+```
   - `sudo apt-get install libpq-dev python-dev`
   - `sudo apt-get install postgresql postgresql-contrib`
   - `sudo su - postgres`
@@ -123,6 +126,7 @@ Take a baseline installation of a Linux distribution on a virtual machine and pr
   - Change create engine line in your `application.py` and `database_setup.py` to:
   `engine = create_engine('postgresql://catalog:password@localhost/catalog')`
   - `python /var/www/catalog/catalog/database_setup.py`
+  ```
 
 15. Restart Apache
   - `sudo service apache2 restart`
